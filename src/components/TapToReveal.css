@@ -1,0 +1,81 @@
+.tap-to-reveal-container {
+  margin: 40px auto;
+  max-width: 500px;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  perspective: 1000px; /* For potential 3D flip effects */
+}
+
+.tap-to-reveal-hidden {
+  background-color: #ffafbd; /* Sweet, romantic color */
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px; /* Ensure a decent size */
+  animation: pulse 2s infinite ease-in-out; /* Gentle pulse to draw attention */
+}
+
+.tap-to-reveal-hidden:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tap-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.tap-text {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.tap-to-reveal-revealed {
+  background-color: #fce4ec; /* Lighter pink for revealed content */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  animation: fadeInFromTop 0.8s ease-out forwards; /* Smooth reveal animation */
+}
+
+/* Optional: Pulse animation for the hidden state */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Optional: Fade in from top animation for revealed content */
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles for images inside the revealed section */
+.tap-to-reveal-revealed img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tap-to-reveal-revealed p.revealed-message {
+    font-size: 1.3em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,46 @@
+
+/* src/components/EncouragementCarousel.css */
+.carousel-container {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.message-display {
+  font-size: 1.5em;
+  min-height: 80px; /* To prevent jumping when messages change length */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: fadeMessage 1s ease-in-out;
+}
+
+.carousel-controls button {
+  background-color: #ff6f61; /* A nice coral color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-controls button:hover {
+  background-color: #e05a5a;
+}
+
+@keyframes fadeMessage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

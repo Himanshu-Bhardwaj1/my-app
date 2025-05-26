@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+body, html, #root, .App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  display: flex; /* Use flexbox for centering content if needed */
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content to the top initially */
+  font-family: 'Inter', sans-serif; /* Using Inter as per guidelines, or choose a romantic font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.App-link {
-  color: #61dafb;
+/* Romantic Background Styling */
+.App {
+  /* A soft, romantic gradient background */
+  background: linear-gradient(to top right, #ffafbd, #ffc3a0); /* Pink to Peach */
+  /* You can experiment with other gradients: */
+  /* background: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%); /* Pink to Blue */
+  /* background: linear-gradient(to right, #fdcbf1 0%, #e6dee9 100%); /* Light Pink to Greyish Pink */
+
+  background-size: 400% 400%; /* For subtle animation */
+  animation: gradientAnimation 15s ease infinite; /* Gentle, slow animation */
+
+  color: #333; /* Default text color for contrast */
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Keyframes for the background gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* General styling for main containers to ensure they sit well on the background */
+.landing-page,
+.carousel-container,
+.tap-to-reveal-container {
+  z-index: 10; /* Ensure content is above the background */
+  position: relative; /* For proper stacking context */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .App {
+    justify-content: flex-start; /* On smaller screens, start content from the top */
   }
 }
