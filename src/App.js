@@ -23,14 +23,14 @@ function App() {
           Go out there and conquer! My heart is always with you.
           <br/><br/>
           With all my love,<br/>
-          [Your Name]
+          Bubba
         </p>
         <img
-          src="./logo.svg" // Path to your first photo in the public folder
+          src="./assets/a1.jpeg" // Path to your first photo in the public folder
           alt="A lovely memory of us"
         />
          <img
-          src="./logo.svg" // Path to your second photo
+          src="./assets/a2.jpeg" // Path to your second photo
           alt="Another cherished moment"
           style={{ marginTop: '20px' }} // Add some spacing between photos
         />
