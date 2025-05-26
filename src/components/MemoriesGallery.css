@@ -1,0 +1,101 @@
+/* src/components/MemoriesGallery.css */
+
+.memories-gallery-container {
+  margin: 60px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.95); /* Nearly opaque white background */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 1000px; /* Max width for the gallery container */
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+.memories-gallery-container h2 {
+  font-size: 2.8em;
+  color: #ff6f61; /* A lovely coral accent */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-intro-text {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between memory cards */
+  justify-content: center;
+  align-items: stretch; /* Ensure cards have similar height if content varies */
+}
+
+.memory-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures rounded corners on images */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.memory-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for images within the revealed TapToReveal content */
+.memory-image {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+  border-radius: 10px; /* Slightly rounded corners for the image itself */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+/* Styles for the message within the revealed TapToReveal content */
+.memory-message {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+  padding: 0 15px 15px; /* Padding inside the card for the message */
+}
+
+/* Ensure TapToReveal's internal revealed styles are compatible */
+.tap-to-reveal-revealed {
+    background-color: #fce4ec; /* Lighter pink for revealed content */
+    padding: 20px; /* Slightly less padding than main container */
+    border-radius: 15px;
+    box-shadow: none; /* Remove redundant shadow from inner component */
+    color: #333;
+    animation: fadeInFromTop 0.8s ease-out forwards;
+    height: 100%; /* Ensure it fills the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push message to bottom if image is tall */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .memories-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    gap: 20px;
+  }
+
+  .memories-gallery-container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .memories-gallery-container h2 {
+    font-size: 2em;
+  }
+
+  .gallery-intro-text {
+    font-size: 1em;
+  }
+}

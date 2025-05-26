@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage';
 import EncouragementCarousel from './components/EncouragementCarousel';
 import TapToReveal from './components/TapToReveal'; // Import the new component
 import AudioPlayer from './components/AudioPlayer';
+import MemoriesGallery from './components/MemoriesGallery';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
         />
         {/* You can add more photos or even a small gallery component here */}
       </TapToReveal>
+
+      <MemoriesGallery />
 
       {/* Add other components as you create them */}
     </div>
